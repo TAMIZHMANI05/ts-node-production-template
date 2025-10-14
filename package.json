@@ -5,13 +5,15 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "build":"tsc",
+    "build": "tsc",
     "start": "node dist/server.js",
     "prepare": "husky"
   },
   "author": "TM",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@types/node": "^24.7.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.4",
