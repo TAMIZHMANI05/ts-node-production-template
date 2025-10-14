@@ -8,8 +8,8 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "prepare": "husky",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "format:check": "prettier . --check",
     "format:fix": "prettier . --fix"
   },
