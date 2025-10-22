@@ -4,6 +4,10 @@ import util from 'util';
 import config from '../configs/config';
 import { EApplicationEnvironment } from '../constants/application';
 import path from 'path';
+import * as sourceMapSupport from 'source-map-support';
+
+// Trace Support
+sourceMapSupport.install();
 
 const consoleLogFormat = format.printf((info) => {
     const { level, message, timestamp, meta } = info;
