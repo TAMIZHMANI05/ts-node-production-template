@@ -1,11 +1,15 @@
 import app from './app';
 import config from './configs/config';
+import { initRateLimiter } from './configs/rateLimiter';
 import logger from './utils/logger';
 
 const server = app.listen(config.PORT);
 
 (() => {
     try {
+        initRateLimiter();
+        logger.info(`RATE_LIMITER_INITIALIZED`);
+
         logger.info(`APPLICATION_STARTED`, {
             meta: {
                 PORT: config.PORT,
