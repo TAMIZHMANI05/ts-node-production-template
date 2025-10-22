@@ -1,6 +1,6 @@
 export default {
     SUCCESS: 'Success',
     SOMETHING_WENT_WRONG: 'Something went wrong',
-    NOTFOUND: (ENTITY: string) => `${ENTITY}' not found`,
+    NOTFOUND: (ENTITY: string) => `'${ENTITY}' not found`,
     TOO_MANY_REQUESTS: 'Too many requests, please try again later.'
 };
