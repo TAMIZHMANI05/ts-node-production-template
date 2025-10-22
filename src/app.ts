@@ -4,6 +4,7 @@ import router from './router/apiRouter';
 import globalErrorHandler from './middlewares/globalErrorHandler';
 import httpError from './utils/httpError';
 import responseMessage from './constants/responseMessage';
+import helmet from 'helmet';
 
 const app: Application = express();
 
@@ -11,6 +12,8 @@ const app: Application = express();
 app.use(express.json());
 // Middleware to static files
 app.use(express.static(path.join(__dirname, '../', 'public')));
+// Security Middleware
+app.use(helmet());
 
 // Routes
 app.use('/api/v1', router);
