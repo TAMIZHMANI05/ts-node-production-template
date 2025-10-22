@@ -5,6 +5,8 @@ import globalErrorHandler from './middlewares/globalErrorHandler';
 import httpError from './utils/httpError';
 import responseMessage from './constants/responseMessage';
 import helmet from 'helmet';
+import cors from 'cors';
+import config from './configs/config';
 
 const app: Application = express();
 
@@ -14,6 +16,14 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../', 'public')));
 // Security Middleware
 app.use(helmet());
+// CORS Middleware
+app.use(
+    cors({
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+        origin: config.CLIENT_URL,
+        credentials: true
+    })
+);
 
 // Routes
 app.use('/api/v1', router);
